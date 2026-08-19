@@ -53,13 +53,26 @@
         <!-- FINAL SCREEN -->
         <section class="screen" id="finalScreen">
 
+            <!-- MOVING BIRTHDAY WORDS -->
+            <div class="floating-words" id="floatingWords">
+                <span>🎉 Happy Birthday 🎉</span>
+                <span>✨ Yara ✨</span>
+                <span>🎂 Have a Beautiful Day 🎂</span>
+                <span>❤️ Best Wishes ❤️</span>
+                <span>🚀 Keep Shining 🚀</span>
+            </div>
+
+
             <div class="final-card">
 
                 <div class="emoji">
                     🎉
                 </div>
 
-                <h1>HAPPY BIRTHDAY Yara🥳🥳🥳!</h1>
+                <h1>
+                    HAPPY BIRTHDAY
+                    {{ birthday.name }} 🥳🥳🥳!
+                </h1>
 
                 <p>
                     A new version of our Friendship has been released.
@@ -70,10 +83,11 @@
                 </div>
 
                 <p class="final-message">
-                    May Allah Bless YOu s,
-                    happier and more successful than the previous one.
+                    May Allah Bless You,
+                    make you happier and more successful
+                    than the previous one.
 
-                    Welcome, {{ birthday.name }}.   
+                    Welcome, {{ birthday.name }}.
                 </p>
 
                 <div class="emoji">

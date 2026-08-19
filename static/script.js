@@ -20,7 +20,7 @@ const cards = [
         `
     },
 
-        {
+    {
         title: "Information",
         content: `
             <div class="info">
@@ -98,7 +98,7 @@ const cards = [
             </div>
 
             <div class="info">
-                Cake.exe → MUST  🎂
+                Cake.exe → MUST 🎂
             </div>
         `
     }
@@ -115,7 +115,6 @@ function startBirthday() {
         .classList.add("active");
 
     showCard();
-
 }
 
 
@@ -135,7 +134,6 @@ function showCard() {
         document.getElementById("nextButton").innerText =
             "FINISH 🎉";
     }
-
 }
 
 
@@ -151,9 +149,95 @@ function nextCard() {
         document.getElementById("finalScreen")
             .classList.add("active");
 
+        // Start final birthday experience
+        speakBirthdayMessage();
+        createFloatingWords();
+
         return;
     }
 
     showCard();
+}
 
+
+/* ================================
+   BIRTHDAY VOICE
+================================ */
+
+function speakBirthdayMessage() {
+
+    window.speechSynthesis.cancel();
+
+    const speech = new SpeechSynthesisUtterance(
+        "Happy Birthday Mase-roo"
+    );
+
+    const voices = window.speechSynthesis.getVoices();
+
+    // Female voice prefer karo
+    const femaleVoice = voices.find(voice =>
+        /female|zira|samantha|karen|susan|hazel|aria|jenny/i.test(voice.name)
+    );
+
+    if (femaleVoice) {
+        speech.voice = femaleVoice;
+    }
+
+    speech.rate = 0.85;
+    speech.pitch = 1.15;
+    speech.volume = 1;
+
+    window.speechSynthesis.speak(speech);
+}
+
+
+/* ================================
+   FLOATING WORDS
+================================ */
+
+function createFloatingWords() {
+
+    const container =
+        document.getElementById("floatingWords");
+
+    if (!container) {
+        return;
+    }
+
+    // Clear old words
+    container.innerHTML = "";
+
+    const words = [
+        "🎉 Happy Birthday 🎉",
+        "✨ Yara ✨",
+        "🎂 Have a Beautiful Day 🎂",
+        "❤️ Best Wishes ❤️",
+        "🚀 Keep Shining 🚀",
+        "🥳 Stay Happy 🥳",
+        "✨ Keep Smiling ✨",
+        "🎁 Enjoy Your Day 🎁"
+    ];
+
+    words.forEach((word, index) => {
+
+        const span = document.createElement("span");
+
+        span.innerText = word;
+
+        span.classList.add("floating-word");
+
+        // Different starting positions
+        span.style.left =
+            Math.random() * 80 + 10 + "%";
+
+        // Different animation delays
+        span.style.animationDelay =
+            (index * 0.7) + "s";
+
+        // Different animation duration
+        span.style.animationDuration =
+            (5 + Math.random() * 4) + "s";
+
+        container.appendChild(span);
+    });
 }

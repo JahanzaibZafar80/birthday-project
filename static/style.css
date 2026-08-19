@@ -12,12 +12,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .app {
     width: 100%;
     max-width: 800px;
     padding: 25px;
+    position: relative;
+    z-index: 2;
 }
 
 .screen {
@@ -91,9 +94,16 @@ button:hover {
     font-family: monospace;
 }
 
+.final-card {
+    position: relative;
+    z-index: 3;
+    animation: finalCardAppear 1s ease forwards;
+}
+
 .final-card h1 {
     font-size: 48px;
     margin: 20px 0;
+    animation: birthdayGlow 2s infinite alternate;
 }
 
 .final-card p {
@@ -117,4 +127,140 @@ button:hover {
 
 .final-message {
     margin: 20px 0;
+}
+
+
+/* =================================
+   FLOATING BIRTHDAY WORDS
+================================= */
+
+.floating-words {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-word {
+    position: absolute;
+    bottom: -60px;
+
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+
+    opacity: 0;
+
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+/* =================================
+   FLOATING ANIMATION
+================================= */
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) rotate(8deg);
+        opacity: 0.9;
+    }
+
+    90% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(-8deg);
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   FINAL CARD ANIMATION
+================================= */
+
+@keyframes finalCardAppear {
+
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* =================================
+   BIRTHDAY GLOW
+================================= */
+
+@keyframes birthdayGlow {
+
+    from {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+
+    to {
+        text-shadow:
+            0 0 10px rgba(255, 255, 255, 0.7),
+            0 0 25px rgba(255, 255, 255, 0.4);
+    }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 15px;
+    }
+
+    .terminal,
+    .card,
+    .final-card {
+        padding: 25px;
+    }
+
+    .card h1 {
+        font-size: 30px;
+    }
+
+    .final-card h1 {
+        font-size: 32px;
+    }
+
+    .card p,
+    .final-card p {
+        font-size: 17px;
+    }
+
+    .emoji {
+        font-size: 42px;
+    }
+
+    .floating-word {
+        font-size: 16px;
+    }
 }
