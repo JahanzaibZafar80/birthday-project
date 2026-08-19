@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Protocol</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- START SCREEN -->
+        <section class="screen active" id="startScreen">
+
+            <div class="terminal">
+                <p>Initializing Birthday Protocol...</p>
+                <p>Loading memories...</p>
+                <p>Checking happiness level...</p>
+                <p class="success">SYSTEM READY ✓</p>
+            </div>
+
+            <button onclick="startBirthday()">
+                START PROTOCOL 🚀
+            </button>
+
+        </section>
+
+
+        <!-- CARD CONTAINER -->
+        <section class="screen" id="cardScreen">
+
+            <div class="card">
+
+                <div class="card-number" id="cardNumber">
+                    01 / 05
+                </div>
+
+                <div id="cardContent"></div>
+
+                <button onclick="nextCard()" id="nextButton">
+                    NEXT →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL SCREEN -->
+        <section class="screen" id="finalScreen">
+
+            <div class="final-card">
+
+                <div class="emoji">
+                    🎉
+                </div>
+
+                <h1>HAPPY BIRTHDAY!</h1>
+
+                <p>
+                    A new version of you has officially been released.
+                </p>
+
+                <div class="version">
+                    Version 2026.1
+                </div>
+
+                <p class="final-message">
+                    May this version be faster, stronger,
+                    happier and more successful than the previous one.
+
+                    Welcome, {{ birthday.name }}.   
+                </p>
+
+                <div class="emoji">
+                    🎂 ❤️ 🚀
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
