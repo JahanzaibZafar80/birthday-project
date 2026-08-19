@@ -5,7 +5,7 @@ app = Flask(__name__)
 birthday_data = {
     "name": "Saqlain",
     "version": "2026.1",
-    "status": "LEGENDARY",
+    "status": "Good Boy",
     "happiness": "100%",
     "cake": "READY 🎂"
 }

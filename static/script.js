@@ -15,16 +15,16 @@ const cards = [
             </div>
 
             <div class="info">
-                Occasion: BIRTHDAY 🎉
+                Moment: BIRTHDAY 🎉
             </div>
         `
     },
 
         {
-        title: "💻 System Information",
+        title: "Information",
         content: `
             <div class="info">
-                User Status: LEGENDARY
+                User Status: Yrrrr
             </div>
 
             <div class="info">
@@ -36,7 +36,7 @@ const cards = [
             </div>
 
             <div class="info">
-                Version: 2026.1
+                Version: 20 Years
             </div>
 
             <div class="info">
@@ -46,18 +46,18 @@ const cards = [
     },
 
     {
-        title: "🚀 New Version Released",
+        title: "🚀 Best Moment Released Released",
         content: `
             <p>
-                Congratulations!
+                Keep Working!
             </p>
 
             <div class="info">
-                Previous Version → 2025
+                Previous  → 19 years
             </div>
 
             <div class="info">
-                Current Version → 2026
+                Current Version → 20 Years
             </div>
 
             <div class="info">
@@ -76,14 +76,14 @@ const cards = [
 
             <p>
                 Today is your day,
-                so this little system was created
+                so this little Cards created
                 just for you.
             </p>
         `
     },
 
     {
-        title: "🔥 Final Check",
+        title: "🔥 Final Moment",
         content: `
             <p>
                 Birthday detected successfully.
@@ -98,7 +98,7 @@ const cards = [
             </div>
 
             <div class="info">
-                Cake.exe → MUST INSTALL 🎂
+                Cake.exe → MUST  🎂
             </div>
         `
     }
